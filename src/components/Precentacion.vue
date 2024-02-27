@@ -120,6 +120,10 @@ function veredicto(item) {
 }
 
 onMounted(async () => {
+  const user = computed(() => stora.state.user)
+  if(user.value === '') {
+   return router.push('/')
+  }
   setTimeout( async () => {
     try {
     const result = await axiosClient.get(`getSecciones/${route.params.id}`);

@@ -71,11 +71,13 @@ const hanledDelate =  async (id) => {
 const secciones = computed(() => store.state.secciones)
  allSecciones.value = secciones.value
 onMounted( async () => {
-  setTimeout( async() => {
-    const user = computed(() => store.state.user)
-  if(!user === '') {
+  const user = computed(() => store.state.user)
+  if(user.value === '') {
+    console.log(user.value);
    return router.push('/')
   }
+  setTimeout( async() => {
+   
   try {
     const result = await axiosClient.get(`getSecciones?user=${user.value}`)
     store.commit('setSecciones', result.data)

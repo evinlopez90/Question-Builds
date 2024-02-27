@@ -38,9 +38,8 @@ const handleSignOut = async () => {
   .then((res) => {
     console.log('succes');})
 
-    store.commit("getUser", null);
+    store.commit("getUser", '');
     const user = computed(() => store.state.user)
-   console.log(user.value);
     router.push('/')
     .catch(error => {
       console.log(error);

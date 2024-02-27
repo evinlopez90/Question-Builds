@@ -152,6 +152,12 @@ async function hanledUndate (value) {
 
 
 onMounted( async() => {
+
+  const user = computed(() => stora.state.user)
+  if(user.value === '') {
+   console.log(user.value);
+   return router.push('/')
+  }
   setTimeout( async() => {
     try {
     const result =  await axiosClient.get(`getSecciones/${route.params.id}`)

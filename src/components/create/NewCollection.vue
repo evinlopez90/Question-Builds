@@ -289,7 +289,10 @@ pregts.value = {
 
 
 onMounted(() => {
-  
+  const user = computed(() => store.state.user)
+  if(user.value === '') {
+   return router.push('/')
+  }
    
   setTimeout(() => {
     loader.value = false
