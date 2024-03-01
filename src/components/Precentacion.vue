@@ -280,7 +280,7 @@ onMounted(async () => {
   background-color: var(--color-dos-secundario); /* Green */
   border: none;
   color: var(--color-t-primario);
-   width: 7%;
+   width: 8%;
   padding: 6px;
   text-align: center;
   text-decoration: none;
@@ -313,4 +313,10 @@ onMounted(async () => {
   animation: l9 2s infinite linear;
 }
 @keyframes l9 {to{transform: rotate(1turn)}}
+
+@media (max-width: 900px) {
+  .buttons button {
+    width: 100px;
+  }
+}
 </style>
